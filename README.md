@@ -23,7 +23,9 @@ use Kopigreenx\SociomileDigital\SociomileDigital;
 | SociomileDigital::statusTicket | user_id | Check sociomile ticket status | Inactive |
 
 ## IMPORTANT ADD TO Environment File
+```sh
 SOCIOMILE_DIGITAL_HOST = <HOST>
 SOCIOMILE_DIGITAL_SECRET = <SECRET_KEY>
 SOCIOMILE_DIGITAL_ID = <SECRET_ID>
+```
 
