@@ -1,0 +1,22 @@
+{
+    "name": "kopigreenx/sociomile-digital-pkg",
+    "description": "laravel sociomile digital api tools",
+    "autoload": {
+        "psr-4": {
+            "Kopigreenx\\SociomileDigital\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kopigreenx\\SociomileDigital\\SociomileDigitalServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Mokhamad Rizkianto",
+            "email": "mokhamad.rizkianto@gmail.com"
+        }
+    ]
+}
