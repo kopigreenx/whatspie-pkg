@@ -35,7 +35,7 @@ php artisan migrate
 | `$name` | `string` | **Required**. Contact Name  |
 | `$message` | `string` | **Required**. Message Will be sent  |
 
-#### Create Ticket As Agent
+#### Create Ticket As Customer
 
 ```php
   SociomileDigital::createTicketAsCustomer($internal_id,$phone,$name,$message)
