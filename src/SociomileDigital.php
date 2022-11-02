@@ -75,7 +75,7 @@ class SociomileDigital
         }
     }
 
-    public function createTicketAsAgent($internal_id,$phone,$name,$message){
+    public static function createTicketAsAgent($internal_id,$phone,$name,$message){
         $log = new SociomileDigitalLog();
         $client = new Client(['base_uri' => "https://".env("SOCIOMILE_DIGITAL_HOST","XXXXX")."/"]);
         $headers = [
