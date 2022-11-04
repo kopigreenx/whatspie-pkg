@@ -7,15 +7,6 @@ use Kopigreenx\SociomileDigital\Models\SociomileDigitalLog;
 
 class SociomileDigital
 {
-    // SOCIOMILE_DIGITAL_HOST = api.sociomile.net
-    // SOCIOMILE_DIGITAL_SECRET = a7d45c58135e2297e63436453bb4d77e
-    // SOCIOMILE_DIGITAL_ID = 635a23285ed8f766e93baa79
-    // SOCIOMILE_DIGITAL_WABA_ID = 6358fb84a0ae6a750662dbac
-    // SOCIOMILE_DIGITAL_WABA_TYPE = BroadcastMessage
-    // SOCIOMILE_DIGITAL_WABA_SECRET=3uX56358fb846e2329.146723786DwDK
-
-    // SOCIOMILE_WABA_HOST = waba.ivosights.com
-    // SOCIOMILE_WABA_SECRET = 3uX56358fb846e2329.146723786DwDK
     public static $digital_secret;
     public static $digital_id;
     public static $waba_secret;
