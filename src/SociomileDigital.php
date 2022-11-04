@@ -7,6 +7,25 @@ use Kopigreenx\SociomileDigital\Models\SociomileDigitalLog;
 
 class SociomileDigital
 {
+    // SOCIOMILE_DIGITAL_HOST = api.sociomile.net
+    // SOCIOMILE_DIGITAL_SECRET = a7d45c58135e2297e63436453bb4d77e
+    // SOCIOMILE_DIGITAL_ID = 635a23285ed8f766e93baa79
+    // SOCIOMILE_DIGITAL_WABA_ID = 6358fb84a0ae6a750662dbac
+    // SOCIOMILE_DIGITAL_WABA_TYPE = BroadcastMessage
+    // SOCIOMILE_DIGITAL_WABA_SECRET=3uX56358fb846e2329.146723786DwDK
+
+    // SOCIOMILE_WABA_HOST = waba.ivosights.com
+    // SOCIOMILE_WABA_SECRET = 3uX56358fb846e2329.146723786DwDK
+    public static $digital_secret;
+    public static $digital_id;
+    public static $waba_secret;
+    public static $waba_id;
+    public function __construct(string $digital_secret,string $digital_id,string $waba_secret,string $waba_id){
+        self::$digital_secret = $digital_secret;
+        self::$digital_id = $digital_id;
+        self::$waba_secret = $waba_secret;
+        self::$waba_id = $waba_id;
+    }
 
     public static function createTicketAsCustomer(String $internal_id,String $phone,String $name,String $message)
     {
@@ -27,8 +46,8 @@ class SociomileDigital
                 array(
                     'headers' => $headers,
                         'form_params' => array(
-                            'client_secret_key' => env("SOCIOMILE_DIGITAL_SECRET","XXXXX"),
-                            'client_secret_id' => env("SOCIOMILE_DIGITAL_ID","XXXXX"),
+                            'client_secret_key' => self::$digital_secret,
+                            'client_secret_id' => self::$digital_id,
                             'user_id' => $phone,
                             'name' => $name,
                             'phone' => $phone,
@@ -61,8 +80,8 @@ class SociomileDigital
                 array(
                     'headers' => $headers,
                         'form_params' => array(
-                            'client_secret_key' => env("SOCIOMILE_DIGITAL_SECRET","XXXXX"),
-                            'client_secret_id' => env("SOCIOMILE_DIGITAL_ID","XXXXX"),
+                            'client_secret_key' => self::$digital_secret,
+                            'client_secret_id' => self::$digital_id,
                             'user_id' => $user_id
                         )
                 )
@@ -80,8 +99,8 @@ class SociomileDigital
         $client = new Client(['base_uri' => "https://".env("SOCIOMILE_DIGITAL_HOST","XXXXX")."/"]);
         $headers = [
             'Accept'        => 'application/json',
-            'X-API-KEY'        =>  env("SOCIOMILE_DIGITAL_WABA_SECRET","XXXXX"),
-            'X-WABA-ID'        =>  env("SOCIOMILE_DIGITAL_WABA_ID","XXXXX"),
+            'X-API-KEY'        =>  self::$waba_secret,
+            'X-WABA-ID'        =>  self::$waba_id,
             'X-NOTIFICATION'        =>  env("SOCIOMILE_DIGITAL_WABA_TYPE","XXXXX"),
         ];
         $log->internal_id = $internal_id;

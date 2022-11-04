@@ -21,7 +21,17 @@ php artisan migrate
 
 
 ## Function Reference
+#### Init
 
+```php
+    new SociomileDigital($digital_secret,$digital_id,$waba_secret,$waba_id)
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| $digital_secret | `string` | **Required**. Sociomile Digital Secret for access API |
+| $digital_id | `string` | **Required**. Sociomile Digital ID for access API |
+| $waba_secret | `string` | **Required**. WABA Secret for access API |
+| $waba_id | `string` | **Required**. WABA ID for access API |
 #### Create Ticket As Agent
 
 ```php
