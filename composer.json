@@ -1,15 +1,15 @@
 {
-    "name": "kopigreenx/sociomile-digital-pkg",
-    "description": "laravel sociomile digital api tools",
+    "name": "kopigreenx/whatspie-pkg",
+    "description": "Whatspie laravel tools",
     "autoload": {
         "psr-4": {
-            "Kopigreenx\\SociomileDigital\\": "src/"
+            "Kopigreenx\\Whatspie\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Kopigreenx\\SociomileDigital\\SociomileDigitalServiceProvider"
+                "Kopigreenx\\Whatspie\\WhatspieServiceProvider"
             ]
         }
     },

@@ -1,84 +1,58 @@
 
-# Sociomile Digital API Connector
+# Whatspie API Connector
 
-3rd party package for creating Ticket & Check Status Ticket3rd party package for creating Ticket & Check Status Ticket
-
-
-## Installation
-
-```bash
-composer require kopigreenx/sociomile-digital-pkg
-
-php artisan migrate
-```
-
+3rd party package for sending Whatsapp messsage 
 
 ## Features
 
-- Create Ticket As Agent
-- Create Ticket As Customer
-- Check Status Ticket
+- send Text Message
+- send Image Message
+- send File Message
 
 
 ## Function Reference
 #### Init
 
 ```php
-    new SociomileDigital($digital_secret,$digital_id,$waba_secret,$waba_id)
+    new Whatspie($device,$secret_key,$uri)
 ```
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| $digital_secret | `string` | **Required**. Sociomile Digital Secret for access API |
-| $digital_id | `string` | **Required**. Sociomile Digital ID for access API |
-| $waba_secret | `string` | **Required**. WABA Secret for access API |
-| $waba_id | `string` | **Required**. WABA ID for access API |
+| $device | `string` | **Required**. Device Number |
+| $secret_key | `string` | **Required**. Secret Key |
+| $uri | `string` | **Required**. API URL |
 #### Create Ticket As Agent
 
 ```php
-  SociomileDigital::createTicketAsAgent($internal_id,$phone,$name,$message)
+  Whatspie::sendTextMessage($receiver,$message)
 ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `$internal_id` | `string` | **Required**. Internal ID |
-| `$phone` | `string` | **Required**. Contact Number  |
-| `$name` | `string` | **Required**. Contact Name  |
+| `$receiver` | `string` | **Required**. Contact Number  |
 | `$message` | `string` | **Required**. Message Will be sent  |
 
 #### Create Ticket As Customer
 
 ```php
-  SociomileDigital::createTicketAsCustomer($internal_id,$phone,$name,$message)
+  Whatspie::sendImageMessage($receiver,$message,$file_url)
 ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `$internal_id` | `string` | **Required**. Internal ID |
-| `$phone` | `string` | **Required**. Contact Number  |
-| `$name` | `string` | **Required**. Contact Name  |
+| `$receiver` | `string` | **Required**. Contact Number  |
 | `$message` | `string` | **Required**. Message Will be sent  |
+| `$file_url` | `string` | **Required**. Image Url  |
 
 #### Check Status Ticket
 
 ```php
-  SociomileDigital::statusTicket($phone)
+  Whatspie::sendFileMessage($receiver,$message,$file_url)
 ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `$phone` | `string` | **Required**. Contact Number  |
-
-
-
-
-## Environment Variables
-
-```sh
-SOCIOMILE_DIGITAL_HOST = <HOST>
-SOCIOMILE_DIGITAL_SECRET = <SECRET_KEY>
-SOCIOMILE_DIGITAL_ID = <SECRET_ID>
-SOCIOMILE_DIGITAL_WABA_ID = <WABA_ID>
-SOCIOMILE_DIGITAL_WABA_TYPE = <TYPE>
-SOCIOMILE_DIGITAL_WABA_SECRET=<WABA_SECRET>
-```
+| `$receiver` | `string` | **Required**. Contact Number  |
+| `$message` | `string` | **Required**. Message Will be sent  |
+| `$file_url` | `string` | **Required**. File Url  |
 
