@@ -1,7 +1,23 @@
 
-# Whatspie API Connector
+# Sociomile Digital API Connector
 
-3rd party package for sending Whatsapp messsage 
+3rd party package for creating Ticket & Check Status Ticket3rd party package for creating Ticket & Check Status Ticket
+
+
+## Installation
+
+```php
+composer require kopigreenx/whatspie-pkg
+```
+### Registering Provider Class
+    directory  config/app.php
+```php
+'providers' => [
+    Kopigreenx\Whatspie\WhatspieServiceProvider::class
+]
+
+```
+
 
 ## Features
 
